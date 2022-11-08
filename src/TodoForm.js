@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
+import './TodoForm.css';
 
 const TodoForm = ({ addTodo }) => {
   const [todo, setTodo] = useState("");
@@ -18,7 +19,7 @@ const TodoForm = ({ addTodo }) => {
     setTodo("");
   };
   return (
-    <div>
+    <div className="form">
       <form onSubmit={submitHandler}>
         <input
           type="text"

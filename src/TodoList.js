@@ -1,11 +1,15 @@
 import React from "react";
+import './TodoList.css';
 
 const TodoList = ({ todos }) => {
   return (
-    <div>
+    <div className="todo-list">
       {todos.map((todo) => {
         return <p key={todo.id} style={{
-            color: todo.color
+            color: todo.color,
+            fontSize: "1.25rem",
+            marginBottom: "5px",
+            
         }}>{todo.title}</p>;
       })}
     </div>
