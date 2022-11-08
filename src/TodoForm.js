@@ -8,9 +8,11 @@ const TodoForm = ({ addTodo }) => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
+    let color = `#${Math.random().toString(16).slice(2,8)}`;
     const todos = {
       title: todo,
-      id: nanoid()
+      id: nanoid(),
+      color
     };
     addTodo(todos);
     setTodo("");

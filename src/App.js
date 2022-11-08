@@ -18,13 +18,9 @@ export default function App() {
 
   useEffect(() => {
     setError("");
-    console.log(todos);
-   
-    
   }, [todos]);
 
   const addTodoHandler = (todo) => {
-    console.log(todo);
     let err = "";
     todos.map((ele) => {
       if (ele.title.toLowerCase() === todo.title.toLowerCase()) {
@@ -33,10 +29,10 @@ export default function App() {
       }
     });
     if (!err) {
-      localStorage.setItem("todos", JSON.stringify(todos));
-      setTodos((prev) => {
-        return [...prev, todo];
+      setTodos(() => {
+        return [...todos, todo];
       });
+      localStorage.setItem("todos", JSON.stringify([...todos, todo]));
     }
     
   };
